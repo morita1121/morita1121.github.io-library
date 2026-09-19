@@ -1,0 +1,124 @@
+:root{
+  --sky-top:#CDEFFA;
+  --sky-mid:#9FDCEE;
+  --sea:#2E9CC7;
+  --sea-deep:#146B94;
+  --foam:#FFFFFF;
+  --sand:#FFF9EC;
+  --sand-line:#EADFC2;
+  --ink:#1C3A44;
+  --ink-soft:#5C7A83;
+  --sun:#FFC857;
+  --coral:#FF8F70;
+  --susuki:#D9C08A;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sea) 100%);
+  min-height:100vh;
+}
+
+/* ============ 空のエリア：太陽・雲・かもめ ============ */
+.sky{
+  position:relative;
+  height:280px;
+  overflow:hidden;
+}
+.sun{
+  position:absolute; top:38px; right:14%;
+  width:80px; height:80px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #FFE9B0, var(--sun));
+  box-shadow:0 0 0 14px rgba(255,200,87,.18);
+}
+.cloud{
+  position:absolute; background:#fff; border-radius:999px; opacity:.9;
+}
+.gull{
+  position:absolute; font-size:20px; color:var(--sea-deep); opacity:.55;
+}
+
+h1.page-title{
+  position:relative; z-index:2;
+  text-align:center;
+  font-family:'Kaisei Decol', serif;
+  font-weight:700;
+  font-size:clamp(28px, 5vw, 40px);
+  color:var(--ink);
+  margin:60px 0 0;
+  letter-spacing:.04em;
+}
+.page-title-en{
+  display:block; text-align:center; z-index:2; position:relative;
+  font-family:'Quicksand', sans-serif; font-weight:600; letter-spacing:.3em;
+  font-size:12px; text-transform:uppercase; color:var(--sea-deep); opacity:.75;
+  margin-top:10px;
+}
+
+/* ============ 波の仕切り ============ */
+.wave-divider{display:block; width:100%; margin-top:-2px;}
+
+/* ============ コンテンツカード ============ */
+main{
+  max-width:640px; margin:-20px auto 0; padding:0 20px 80px;
+  position:relative; z-index:3;
+}
+.card{
+  background:var(--sand);
+  border-radius:26px;
+  padding:44px 40px 40px;
+  box-shadow:0 18px 40px rgba(20,107,148,.18);
+  position:relative;
+}
+.tag-row{
+  display:flex; justify-content:center; gap:10px; margin-bottom:22px; flex-wrap:wrap;
+}
+.tag{
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'Quicksand', sans-serif; font-weight:600; font-size:12.5px;
+  background:#fff; color:var(--sea-deep); border:1px solid var(--sand-line);
+  padding:6px 14px; border-radius:999px;
+}
+
+h4.subtitle{
+  text-align:center; margin:0 0 18px;
+  font-family:'Kaisei Decol', serif; font-weight:700;
+  font-size:19px; color:var(--sea-deep);
+}
+
+.divider{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin:0 0 26px; color:var(--sea); opacity:.55;
+}
+.divider span{font-size:13px;}
+.divider::before, .divider::after{
+  content:""; flex:1; height:1px;
+  background:linear-gradient(90deg, transparent, var(--sand-line), transparent);
+}
+
+p.ruled-line {
+  font-size:18px;
+  line-height:2.4;
+  color:var(--ink);
+  background-image:linear-gradient(180deg, var(--sand-line) 1px, transparent 1px);
+  background-size:100% 2.4em;
+  background-position:bottom 2px center;
+  margin:0 0 30px;
+}
+
+.illustration{
+  display:flex; justify-content:center; margin-bottom:6px;
+}
+
+footer{
+  text-align:center; margin-top:26px;
+  font-family:'Quicksand', sans-serif; font-size:12.5px; color:var(--ink-soft);
+}
+
+/* ============ 下部の海 ============ */
+.sea-footer{
+  height:60px;
+  background:linear-gradient(180deg, var(--sea), var(--sea-deep));
+}
